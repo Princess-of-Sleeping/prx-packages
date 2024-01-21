@@ -1,0 +1,16 @@
+diff -ru a/src/libjpeg_download/jerror.c b/src/libjpeg_download/jerror.c
+--- a/src/libjpeg_download/jerror.c	1970-01-01 00:00:00.000000000 +0900
++++ b/src/libjpeg_download/jerror.c	1970-01-01 00:00:00.000000000 +0900
+@@ -50,7 +50,12 @@
+ #include "jerror.h"
+   NULL
+ };
+ 
++extern FILE _Stderr;
++extern FILE _Stdin;
++extern FILE _Stdout;
++#undef stderr
++#define stderr (&_Stderr)
+ 
+ /*
+  * Error exit handler: must not return to caller.

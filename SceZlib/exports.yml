@@ -1,0 +1,117 @@
+SceZlib:
+  attributes: 0
+  version:
+    major: 1
+    minor: 1
+  main:
+    start: module_start
+  libraries:
+    SceZlib:
+      syscall: false
+      version: 1
+      functions:
+        - adler32_z
+        - adler32
+        - adler32_combine
+        - adler32_combine64
+        - get_crc_table
+        - crc32_z
+        - crc32
+        - crc32_combine64
+        - crc32_combine
+        - crc32_combine_gen64
+        - crc32_combine_gen
+        - crc32_combine_op
+        - deflateSetDictionary
+        - deflateGetDictionary
+        - deflateResetKeep
+        - deflateReset
+        - deflateSetHeader
+        - deflatePending
+        - deflatePrime
+        - deflateParams
+        - deflateTune
+        - deflateBound
+        - deflate
+        - deflateEnd
+        - deflateInit2_
+        - deflateInit_
+        - deflateCopy
+        - inflateBackInit_
+        - inflateBack
+        - inflateBackEnd
+        - inflate_fast
+        - inflateResetKeep
+        - inflateReset
+        - inflateReset2
+        - inflateInit2_
+        - inflateInit_
+        - inflatePrime
+        - inflate
+        - inflateEnd
+        - inflateGetDictionary
+        - inflateSetDictionary
+        - inflateGetHeader
+        - inflateSync
+        - inflateSyncPoint
+        - inflateCopy
+        - inflateUndermine
+        - inflateValidate
+        - inflateMark
+        - inflateCodesUsed
+        - inflate_table
+        # - _tr_init
+        # - _tr_stored_block
+        # - _tr_flush_bits
+        # - _tr_align
+        # - _tr_flush_block
+        # - _tr_tally
+        # - _length_code
+        # - _dist_code
+        - zlibVersion
+        - zlibCompileFlags
+        - zError
+        - zcalloc
+        - zcfree
+        - compress2
+        - compress
+        - compressBound
+        - uncompress2
+        - uncompress
+        # - gzclose
+        # - gzopen
+        # - gzopen64
+        # - gzdopen
+        # - gzbuffer
+        # - gzrewind
+        # - gzseek64
+        # - gzseek
+        # - gztell64
+        # - gztell
+        # - gzoffset64
+        # - gzoffset
+        # - gzeof
+        # - gzerror
+        # - gzclearerr
+        # - gz_error
+        # - gzread
+        # - gzfread
+        # - gzgetc
+        # - gzgetc_
+        # - gzungetc
+        # - gzgets
+        # - gzdirect
+        # - gzclose_r
+        # - gzwrite
+        # - gzfwrite
+        # - gzputc
+        # - gzputs
+        # - gzvprintf
+        # - gzprintf
+        # - gzflush
+        # - gzsetparams
+        # - gzclose_w
+      variables:
+        - deflate_copyright
+        - inflate_copyright
+        - z_errmsg
