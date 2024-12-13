@@ -1,0 +1,45 @@
+diff -ru a/src/capstone_download/SStream.h b/src/capstone_download/SStream.h
+--- a/src/capstone_download/SStream.h	1970-01-01 00:00:00.000000000 +0900
++++ b/src/capstone_download/SStream.h	1970-01-01 00:00:00.000000000 +0900
+@@ -4,12 +4,15 @@
+ #ifndef CS_SSTREAM_H_
+ #define CS_SSTREAM_H_
+ 
+ #include "include/capstone/platform.h"
+ #include <stdio.h>
++#include <psp2/kernel/clib.h>
++
++#define fprintf(fp, ...) sceClibPrintf(__VA_ARGS__)
+ 
+ typedef enum {
+ 	Markup_Immediate,
+ 	Markup_Register,
+ 	Markup_Target,
+ 	Markup_Memory,
+ } SStreamMarkup;
+diff -ru a/src/capstone_download/utils.c b/src/capstone_download/utils.c
+--- a/src/capstone_download/utils.c	1970-01-01 00:00:00.000000000 +0900
++++ b/src/capstone_download/utils.c	1970-01-01 00:00:00.000000000 +0900
+@@ -8,6 +8,8 @@
+ #include <stdlib.h>
+ #endif
+ #include <string.h>
+-#include <ctype.h>
++#include <psp2/kernel/clib.h>
++#define tolower sceClibTolower
++#define printf sceClibPrintf
+
+ #include "utils.h"
+diff -ru a/src/capstone_download/Mapping.c b/src/capstone_download/Mapping.c
+--- a/src/capstone_download/Mapping.c	1970-01-01 00:00:00.000000000 +0900
++++ b/src/capstone_download/Mapping.c	1970-01-01 00:00:00.000000000 +0900
+@@ -5,7 +5,9 @@
+ #include "Mapping.h"
+ #include "capstone/capstone.h"
+ #include "cs_priv.h"
+ #include "utils.h"
++#include <psp2/kernel/clib.h>
++#define printf sceClibPrintf
+ 
+ // create a cache for fast id lookup
+ static unsigned short *make_id2insn(const insn_map *insns, unsigned int size)

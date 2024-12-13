@@ -21,3 +21,4 @@ build_prx SceLibPng
 build_prx SceLibJpeg
 build_prx SceLibVita2d
 build_prx SceLibYaml
+build_prx SceLibCapstone

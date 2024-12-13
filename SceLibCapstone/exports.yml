@@ -1,0 +1,58 @@
+SceLibCapstone:
+  attributes: 0
+  version:
+    major: 1
+    minor: 1
+  main:
+    start: module_start
+    stop: module_stop
+  libraries:
+    SceLibCapstone:
+      version: 1
+      syscall: false
+      functions:
+        - cs_version
+        - cs_arch_register_arm
+        - cs_arch_register_aarch64
+        - cs_arch_register_mips
+        - cs_arch_register_x86
+        - cs_arch_register_powerpc
+        - cs_arch_register_sparc
+        - cs_arch_register_systemz
+        - cs_arch_register_xcore
+        - cs_arch_register_m68k
+        - cs_arch_register_tms320c64x
+        - cs_arch_register_m680x
+        - cs_arch_register_evm
+        - cs_arch_register_mos65xx
+        - cs_arch_register_wasm
+        - cs_arch_register_bpf
+        - cs_arch_register_riscv
+        - cs_arch_register_sh
+        - cs_arch_register_tricore
+        - cs_arch_register_alpha
+        - cs_arch_register_loongarch
+        - cs_support
+        - cs_open
+        - cs_close
+        - cs_option
+        - cs_errno
+        - cs_strerror
+        - cs_disasm
+        - cs_free
+        - cs_malloc
+        - cs_disasm_iter
+        - cs_reg_name
+        - cs_insn_name
+        - cs_group_name
+        - cs_insn_group
+        - cs_reg_read
+        - cs_reg_write
+        - cs_op_count
+        - cs_op_index
+        - cs_regs_access
+      variables:
+        - _sceCapstoneMalloc
+        - _sceCapstoneRealloc
+        - _sceCapstoneCalloc
+        - _sceCapstoneFree
