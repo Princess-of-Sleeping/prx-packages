@@ -88,6 +88,10 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libSceLibCapstone_stub.a ${CMAKE_CURRE
   DESTINATION lib
 )
 
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/capstone_download-prefix/src/capstone_download/include
+  DESTINATION ${VITASDK}/arm-vita-eabi
+)
+
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libcapstone.suprx
   DESTINATION ${VITASDK}/prx
 )
