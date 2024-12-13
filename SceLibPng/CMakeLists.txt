@@ -48,7 +48,9 @@ set(LIBPNG_SRC
   ${CMAKE_CURRENT_BINARY_DIR}/libpng_download-prefix/src/libpng_download/pngwtran.c
   ${CMAKE_CURRENT_BINARY_DIR}/libpng_download-prefix/src/libpng_download/pngwutil.c
   ${CMAKE_CURRENT_BINARY_DIR}/libpng_download-prefix/src/libpng_download/arm/arm_init.c
-  ${CMAKE_CURRENT_BINARY_DIR}/libpng_download-prefix/src/libpng_download/arm/filter_neon.S
+  # ${CMAKE_CURRENT_BINARY_DIR}/libpng_download-prefix/src/libpng_download/arm/filter_neon.S
+  ${CMAKE_CURRENT_BINARY_DIR}/libpng_download-prefix/src/libpng_download/arm/filter_neon_intrinsics.c
+  ${CMAKE_CURRENT_BINARY_DIR}/libpng_download-prefix/src/libpng_download/arm/palette_neon_intrinsics.c
 )
 
 add_custom_command(
@@ -73,7 +75,7 @@ target_link_libraries(${PROJECT_NAME}
 
 set_target_properties(${PROJECT_NAME}
   PROPERTIES LINK_FLAGS "-nostdlib"
-  COMPILE_FLAGS "-D__PSP2_USER__ -DPNG_WEIGHT_SHIFT=8 -DPNG_COST_SHIFT=3 -DPNG_ERROR_NUMBERS_SUPPORTED -DPNG_ARM_NEON_IMPLEMENTATION=2 -DPNG_ARM_NEON_OPT=1"
+  COMPILE_FLAGS "-D__PSP2_USER__ -DPNG_WEIGHT_SHIFT=8 -DPNG_COST_SHIFT=3 -DPNG_ERROR_NUMBERS_SUPPORTED -DPNG_ARM_NEON_IMPLEMENTATION=1 -DPNG_ARM_NEON_OPT=1"
 )
 
 vita_create_self(libpng.suprx ${PROJECT_NAME}
